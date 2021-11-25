@@ -1,0 +1,41 @@
+### REST CLIENT Extension
+@hostname = http://localhost
+@port = 3001
+@host = {{hostname}}:{{port}}
+@base= api
+
+@notes= notes
+
+@contentType = application/json
+
+@id = 4
+
+
+// Create a Note
+POST {{host}}/{{base}}/{{notes}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "content": "Hello there",
+  "important": true
+}
+###
+
+
+// Get All Notes
+GET {{host}}/{{base}}/{{notes}} HTTP/1.1
+###
+
+// Update a Note
+PUT {{host}}/{{base}}/{{notes}}/{{id}} HTTP/1.1 
+content-type: {{contentType}}
+
+{
+  "content": "General Kenoby",
+  "important": true
+}
+###
+
+// Delete a note
+DELETE {{host}}/{{base}}/{{notes}}/{{id}} HTTP/1.1 
+###
